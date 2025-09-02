@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CreativePro — Animated Neon Background (Split)</title>
+  <meta name="description" content="CreativePro — animated flowing gradients and morphing blobs. Split files demo." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Animated background elements -->
+  <div class="bg-stage" aria-hidden="true">
+    <img src="assets/wave.svg" class="bg-wave bg-wave-1" alt="">
+    <img src="assets/wave.svg" class="bg-wave bg-wave-2" alt="">
+    <div id="blobCanvas" class="blob-canvas" aria-hidden="true"></div>
+  </div>
+
+  <header class="header">
+    <div class="brand">
+      <div class="logo">CP</div>
+      <div>
+        <div class="title">CreativePro</div>
+        <div class="subtitle">Animated neon backgrounds • smooth motion</div>
+      </div>
+    </div>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#videos">Videos</a>
+      <a href="#contact" class="cta">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <h1>Colorful, flowing, futuristic interfaces</h1>
+        <p>We craft vivid web experiences with animated gradient waves and morphing blobs. Slow, elegant motion guides attention.</p>
+        <div class="actions">
+          <button class="btn primary" onclick="scrollToSection('work')">View Work</button>
+          <button class="btn ghost" onclick="scrollToSection('videos')">Watch Videos</button>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <h3>Design Systems</h3>
+            <p class="muted">Reusable UI + motion tokens.</p>
+          </div>
+          <div class="feature">
+            <h3>Motion Design</h3>
+            <p class="muted">Slow, intentional transitions.</p>
+          </div>
+          <div class="feature">
+            <h3>Engineering</h3>
+            <p class="muted">Accessible, fast production code.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="panel">
+          <h4>Studio Preview</h4>
+          <p class="muted">A quick look at our visual language.</p>
+          <div class="stats">
+            <div><strong>12.4k</strong><div class="muted">visitors</div></div>
+            <div><strong>3.7%</strong><div class="muted">conversion</div></div>
+          </div>
+        </div>
+        <div class="panel action-panel">
+          <div>Get a proposal</div>
+          <button class="btn small" onclick="scrollToSection('contact')">Contact</button>
+        </div>
+      </aside>
+    </section>
+
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <p class="muted">Strategy, design, motion, and engineering.</p>
+      <div class="cards">
+        <div class="card">Brand & Identity</div>
+        <div class="card">Product Design</div>
+        <div class="card">Full-stack Engineering</div>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <h2>Work</h2>
+      <p class="muted">Selected projects with motion-first visuals.</p>
+      <div class="grid">
+        <div class="proj" tabindex="0" data-title="Fintech Dashboard" data-desc="Analytics & charts">
+          <img src="assets/placeholder1.webp" alt="project 1">
+          <div class="overlay"><strong>Fintech Dashboard</strong><div class="muted">Realtime analytics</div></div>
+        </div>
+        <div class="proj" tabindex="0" data-title="E-commerce" data-desc="Conversion">
+          <img src="assets/placeholder2.webp" alt="project 2">
+          <div class="overlay"><strong>E-commerce Rebuild</strong><div class="muted">Product pages</div></div>
+        </div>
+        <div class="proj" tabindex="0" data-title="Mobile App" data-desc="Interactions">
+          <img src="assets/placeholder3.webp" alt="project 3">
+          <div class="overlay"><strong>Mobile App</strong><div class="muted">Micro-interactions</div></div>
+        </div>
+      </div>
+      <div class="center"><button id="loadMore" class="btn ghost">Load more</button></div>
+    </section>
+
+    <section id="videos" class="section">
+      <h2>Videos</h2>
+      <p class="muted">Demos and motion studies.</p>
+      <div class="videos">
+        <div class="video-card">
+          <video controls muted preload="metadata" poster="assets/placeholder1.webp">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          </video>
+          <div class="meta"><strong>Product Walkthrough</strong><div class="muted">3:28</div></div>
+        </div>
+        <div class="video-card">
+          <video controls muted preload="metadata" poster="assets/placeholder2.webp">
+            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+          </video>
+          <div class="meta"><strong>Motion Study</strong><div class="muted">2:14</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p class="muted">Tell us about your project — we'll reply within 2 business days.</p>
+      <form id="contactForm">
+        <div class="form-grid">
+          <input name="name" placeholder="Your name" required>
+          <input name="email" placeholder="Your email" required>
+          <input name="company" placeholder="Company (optional)">
+          <input name="budget" placeholder="Estimated budget">
+          <textarea name="message" placeholder="Brief about the project" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send message</button>
+          <div id="formStatus" class="muted" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> CreativePro — All rights reserved.</div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+      <h2>Portfolio</h2>
+      <p class="muted">A showcase of our creative projects.</p>
+      <div class="grid">
+        <div class="proj" tabindex="0">
+          <img src="assets/placeholder1.webp" alt="Project A">
+          <div class="overlay"><strong>Project A</strong><div class="muted">Brand identity</div></div>
+        </div>
+        <div class="proj" tabindex="0">
+          <img src="assets/placeholder2.webp" alt="Project B">
+          <div class="overlay"><strong>Project B</strong><div class="muted">UI/UX design</div></div>
+        </div>
+        <div class="proj" tabindex="0">
+          <img src="assets/placeholder3.webp" alt="Project C">
+          <div class="overlay"><strong>Project C</strong><div class="muted">Motion graphics</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+      <h2>Testimonials</h2>
+      <div class="testimonial-carousel">
+        <div class="testimonial">
+          <p>“CreativePro brought our vision to life with stunning motion design.”</p>
+          <div class="author">— Alex J., Fintech CEO</div>
+        </div>
+        <div class="testimonial">
+          <p>“The animations improved engagement and made our product unforgettable.”</p>
+          <div class="author">— Sara M., Product Manager</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+      <h2>FAQ</h2>
+      <div class="faq-item">
+        <button class="faq-question">How long does a project take?</button>
+        <div class="faq-answer">Typically 4–8 weeks depending on scope.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you provide ongoing support?</button>
+        <div class="faq-answer">Yes, we offer support packages after launch.</div>
+      </div>
+    </section>
+
